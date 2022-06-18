@@ -1,0 +1,77 @@
+body{
+    background-color: rgb(214, 214, 214);
+    margin: 0;;
+}
+.title-container{
+    width: 100%;
+    display: block;
+    text-align: center;
+    margin-bottom: 20px;
+}
+.title{
+    text-align: center;
+    display: inline;
+    font-size: 5em;
+    margin: 0 auto;
+    color: black;
+}
+.add-url{
+    padding-left: 20px;
+    text-decoration: none;
+    width: 50px;
+    font-size: 50px;
+}
+.add-btn{
+    width: 70px;
+    height: auto;
+}
+li{
+    font-size: 2.5em;
+    height: 72px;
+    border-bottom: 1px solid gray;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #f0f4f9;
+    margin: 0 15%;
+    padding-left: 5%;
+}
+.list-url{
+    height: 1em;
+    width: 1rem;
+    align-items: center;
+}
+.list-btn{
+    padding-top: 5px;
+    height: 1em;
+    width: auto;
+    align-items: center;
+    text-align: right;
+}
+.delete-form{
+    display: inline-block;
+    width: 40px;
+    height: auto;
+}
+.delete-btn{
+    width: 40px;
+    height: auto;
+}
+.btn{
+    width: 100%;
+    display: block;
+    margin-top: 100px;
+    text-align: center;
+}
+.top-btn{
+    margin: 0 auto;
+    text-decoration: none;
+    font-size: 3em;
+    color: black;
+    background-color: rgb(50, 85, 161);
+    padding: 5px;
+    border-radius: 60px;
+}
+.top-btn:hover{
+    background-color:rgb(113, 238, 238);
+}

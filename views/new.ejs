@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet"  type='text/css' href="/css/new.css">
+    <title>new</title>
+</head>
+<body>
+    <dev class="title-container">
+        <h1 class="title">新しい項目の追加</h1>
+    </dev>
+    <form action="/create" method="post" class="form">
+        <dev clas='add1'>
+            <p class="addSentence1">誰に</p>
+            <input type="text" class="addListUserName" name="addListUserName">
+        </dev>
+        <dev clas="add2">
+            <p class="addSentence2">何する？</p>
+            <input type="text" class="addListAction" name ='addListAction'>
+        </dev>
+        <input type="submit" value="登録" class="addListSubmit">
+    </form>
+    <dev class='btn-container'>
+        <a href="/list" class="btn">リストへ戻る</a>
+    </dev>
+</body>
+</html>

@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet"  type='text/css' href="/css/tell.css">
+    <title>tell</title>
+</head>
+<body>
+    <dev class="title-container">
+        <h1 class="title">電話番号の追加</h1>
+    </dev>
+    <form action="/createUser" method="post">
+        <p class='userName-sentence'>利用者氏名</p>
+        <input type="text" class='addInfoUserName' name='addInfoUserName'>
+        <p class="user-phoneNo">電話番号</p>
+        <input type="text" class="addInfoUserPhone" name='addInfoUserPhone'>
+        <input type="submit" value="登録" class="addInfoSubmit">
+    </form>
+    <dev class="btn-container">
+        <a href="/user" class="btn">ユーザーへ戻る</a>
+    </dev>
+</body>
+</html>
