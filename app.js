@@ -1,11 +1,11 @@
 const express = require('express');
 const mysql = require('mysql2');
 const app = express();
-
+const session = require('express-session');
 
 app.use(express.static('public'));
-
 app.use(express.urlencoded({extended: false}));
+
 
 
 const connection = mysql.createConnection({
@@ -23,10 +23,19 @@ connection.connect((err) =>{
     console.log('success');
 });
 
+app.use(
+    session({
+        secret: 'my_secret_key',
+        resave: false,
+        saveUninitialized: false,
+    })
+)
+
+
 
 app.get('/' , (req ,res) =>{
 connection.query(
-    'SELECT * FROM todoList',
+    'SELECT * FROM users',
     (error, results) =>{
         console.log('topが開きました');
         console.log(results);
@@ -35,11 +44,42 @@ connection.query(
 );
 });
 
+//ログイン画面の表示
+
+app.get('/login' , (req , res) =>{
+    res.render('login.ejs');
+    console.log('ログイン画面が開きました');
+});
+
+//ログイン処理
+
+app.post('/login' , (req , res) =>{
+    const email = req.body.email ;
+    connection.query(
+        'SELECT * FROM users WHERE userMail=?' ,
+        [email] , 
+        (error , results) => {
+            //条件分岐；一致するuserMailの数を取得し1以上なら次の分岐へ
+            if(results.length > 0){
+                //条件分岐:パスワードがデータベースと一致するか比較演算
+                if(req.body.password === results[0].userPassword){
+                    console.log('認証成功');
+                    res.redirect('/list');
+                } else {
+                    console.log('認証失敗');
+                    res.redirect('/login');
+                }
+        } else {
+            res.redirect('/login');
+        }
+    });
+});
+
 app.get('/list' , (req ,res) =>{
     connection.query(
         'SELECT * FROM todoList' ,
         (error , results) =>{
-            res.render('list.ejs' , {todoList:results});
+            res.render('list.ejs');
             console.log("listが開きました");
         });
 

@@ -12,21 +12,8 @@
       <h1 class="title">やることリスト</h1>
       <a href="/new" class="add-url"><img src='/images/plus.png' class="add-btn"></a>
    </dev>
-    <% todoList.forEach((todoList) => { %>
-        <li>
-          <div class="item-data">
-            <span class="listUserName"><%= todoList.name %></span>
-            <span class="listAction"><%= todoList.todo %></span>
-            <span class="listAction">(<%= todoList.phone %>)</span>
-            <form class='delete-form' action="/deleteList/<%=todoList.id%>" method="post">
-              <input class='delete-btn' type="image" src="/images/delete.png" alt="削除" name="deleteTodoList">
-            </form>
-          </div>
-        </li>
-      <% }) %>
-      <dev class="btn">
-        <a href="/" class="top-btn">トップへ戻る</a>
-      </dev>
+
+  
      
 </body>
 </html>
