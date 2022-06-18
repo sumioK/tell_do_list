@@ -31,7 +31,17 @@ app.use(
     })
 )
 
-
+app.use((req , res , next) => {
+    if(req.session.userId === undefined){
+        console.log('ログインしていません');
+        res.locals.userName = 'ゲスト' ;
+        
+    }else{
+        res.locals.userName = req.session.userName;
+        console.log("ログインしています");
+    }
+    next();
+});
 
 app.get('/' , (req ,res) =>{
 connection.query(
@@ -63,7 +73,8 @@ app.post('/login' , (req , res) =>{
             if(results.length > 0){
                 //条件分岐:パスワードがデータベースと一致するか比較演算
                 if(req.body.password === results[0].userPassword){
-                    console.log('認証成功');
+                    req.session.userId = results[0].userId;
+                    req.session.userName = results[0].userName;
                     res.redirect('/list');
                 } else {
                     console.log('認証失敗');
@@ -76,6 +87,11 @@ app.post('/login' , (req , res) =>{
 });
 
 app.get('/list' , (req ,res) =>{
+    if(req.session.userId === undefined){
+        console.log('ログインしていません');
+    } else{
+        console.log('ログインしています。');
+    }
     connection.query(
         'SELECT * FROM todoList' ,
         (error , results) =>{
