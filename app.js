@@ -54,6 +54,69 @@ connection.query(
 );
 });
 
+//signUp処理
+
+app.get('/signup' , (req , res ) =>{
+    res.render('signup.ejs' , {errors:[]});
+});
+
+app.post('/signup' , (req , res , next) =>{
+    const username = req.body.userName;
+    const email = req.body.email;
+    const password = req.body.password;
+    const password2 = req.body.password2;
+
+        //入力情報に誤りがあった場合登録できないようにする
+    const errors = [];
+    if(username === ''){
+        errors.push('ユーザー名が入力されていません');
+    }
+    if(email === ''){
+        errors.push('メールアドレスが入力されていません');
+    }
+    if(password === ''){
+        errors.push('パスワードが入力されていません');
+    }
+    if(password !== password2){
+        errors.push('確認用パスワードが誤っています');
+    }
+    console.log(errors);
+
+    if(errors.length > 0){
+        res.render('signup.ejs' , {errors:errors});
+    }else{
+        next();
+    }
+},
+(req , res , next) =>{
+    const email = req.body.email ;
+    const errors = [];
+    connection.query(
+        'SELECT * FROM users WHERE userMail = ?',
+        [email],
+        (error , results) => {
+            if(results.length > 0){
+                errors.push('すでに登録されているメールアドレスです');
+                res.render('signup.ejs' , {errors:errors});
+            } else {
+                next();
+            }
+    });
+},
+(req , res) =>{
+    connection.query(
+        'INSERT INTO users(userName , userMail , userPassword) VALUES(? ,? , ?)' ,
+        [username , email , password] ,
+        (error , results) => {
+            req.session.userId = results.insertId ;
+            req.session.userName = username ;
+            res.redirect('/');
+        }
+    ); 
+  }
+);
+
+
 //ログイン画面の表示
 
 app.get('/login' , (req , res) =>{

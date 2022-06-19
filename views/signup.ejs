@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="js">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet"  type='text/css' href="/css/style.css">
+    <title>SignUp</title>
+</head>
+<body>
+    <h1>新規登録</h1>
+    <% if (errors.length > 0) { %>
+        <ul class="errors">
+          <% errors.forEach(error =>{ %>
+          <li> <%= error %> </li> 
+          <% }); %>
+        </ul>
+      <% } %>
+    <form action="/signup"  method="post">
+        <p>ユーザー名</p>
+        <input type="text" name="userName">
+        <p>メールアドレス</p>
+        <input type="text" name="email">
+        <p>パスワード</p>
+        <input type='password' name="password">
+        <p>確認用パスワード</p>
+        <input type='password' name="password2">
+        <input type="submit" value='登録'>
+
+    </form>
+    <a href="/">トップ画面にもどる</a>
+</body>
+</html>
