@@ -210,7 +210,34 @@ app.post('/createPa' , (req , res) =>{
     
     });
 
-    
+
+//TODOの追加処理
+app.get('/addlist' , (req ,res) =>{
+    connection.query(
+        'SELECT * FROM lists' ,
+        (error , results) =>{
+            res.render('addlist.ejs' );
+            console.log("addlistが開きました");
+        });
+
+    });
+
+app.post('/create' , (req , res) =>{
+    connection.query(
+                'INSERT INTO lists(listFor ,listAction ,userId) VALUES(? ,? ,?)',
+                    [req.body.addListUserName,req.body.addListAction,req.session.userId],
+                (error , results) =>{
+                    connection.query(
+                        'UPDATE lists , pa SET lists.phoneNum = pa.phoneNum WHERE lists.listFor = pa.paName',
+                        (error , results) =>{
+                            res.redirect('/list');
+                        }
+                    );
+            });                  
+        });
+
+
+
 app.get('/list' , (req ,res) =>{
     //条件分岐：ログインしいなければlistは表示できない
     if(req.session.userId === undefined){
@@ -218,7 +245,7 @@ app.get('/list' , (req ,res) =>{
         connection.query(
             'SELECT * FROM todoList' ,
             (error , results) =>{
-                res.render('login.ejs');
+                res.render('login.ejs' , {errors:[]});
                 console.log('ログインしてください')
             });
     } else{
@@ -229,37 +256,9 @@ app.get('/list' , (req ,res) =>{
                 console.log("listが開きました");
             });
     }
-  
+    
 
 });
-
-
-app.get('/new' , (req ,res) =>{
-    connection.query(
-        'SELECT * FROM todoList' ,
-        (error , results) =>{
-            res.render('new.ejs' );
-            console.log("newが開きました");
-        });
-
-    });
-
-app.post('/create' , (req , res) =>{
-    connection.query(
-                'INSERT INTO todoList(name ,todo ) VALUES(? ,?)',
-                    [req.body.addListUserName,req.body.addListAction],
-                (error , results) =>{
-                    connection.query(
-                        'UPDATE todoList , userInfo SET todoList.phone = userInfo.phone WHERE todoList.name = userInfo.name',
-                        (error , results) =>{
-                            res.redirect('/list');
-                        }
-                    );
-            });                  
-        });
-
-
-
 
 
     //リストの削除処理
