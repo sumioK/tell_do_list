@@ -174,12 +174,12 @@ app.get('/logout' , (req , res ) =>{
 
 
 //電話番号登録画面
-app.get('/adduser' , (req ,res) =>{
+app.get('/addpa' , (req ,res) =>{
     connection.query(
         'SELECT * FROM pa' ,
         (error , results) =>{
-            res.render('adduser.ejs');
-            console.log("adduserが開きました");
+            res.render('addpa.ejs');
+            console.log("addpaが開きました");
             console.log(results);
         });
 
@@ -193,7 +193,7 @@ app.post('/createPa' , (req , res) =>{
         'INSERT INTO pa(paName ,phoneNUm , userId) VALUES( ? ,? , ? )',
         [req.body.addPaName,req.body.addPhoneNum,sid],
         (error ,results) =>{
-            res.redirect('/adduser');
+            res.redirect('/list');
         }
     );
     });
