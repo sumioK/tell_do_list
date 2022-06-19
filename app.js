@@ -2,6 +2,7 @@ const express = require('express');
 const mysql = require('mysql2');
 const app = express();
 const session = require('express-session');
+const bcrypt = require('bcrypt');
 
 app.use(express.static('public'));
 app.use(express.urlencoded({extended: false}));
@@ -103,10 +104,16 @@ app.post('/signup' , (req , res , next) =>{
             }
     });
 },
-(req , res) =>{
+(req , res) =>{   
+    const username = req.body.userName;
+    const email = req.body.email;
+    const password = req.body.password;
+    const password2 = req.body.password2;
+    
+    bcrypt.hash(password , 10 , (error , hash) =>{
     connection.query(
         'INSERT INTO users(userName , userMail , userPassword) VALUES(? ,? , ?)' ,
-        [username , email , password] ,
+        [username , email , hash] ,
         (error , results) => {
             req.session.userId = results.insertId ;
             req.session.userName = username ;
@@ -115,7 +122,7 @@ app.post('/signup' , (req , res , next) =>{
     ); 
   }
 );
-
+});
 
 //ログイン画面の表示
 
@@ -133,17 +140,22 @@ app.post('/login' , (req , res) =>{
         [email] , 
         (error , results) => {
             //条件分岐；一致するuserMailの数を取得し1以上なら次の分岐へ
-            if(results.length > 0){
-                //条件分岐:パスワードがデータベースと一致するか比較演算
-                if(req.body.password === results[0].userPassword){
-                    req.session.userId = results[0].userId;
+            if (results.length > 0){
+                const plain = req.body.password ;
+
+                const hash = results[0].userPassword ;
+
+                bcrypt.compare( plain , hash , (error , isEqual) =>{
+                    if(isEqual){
+                        req.session.userId = results[0].userId;
                     req.session.userName = results[0].userName;
                     res.redirect('/');
-                } else {
-                    console.log('認証失敗');
-                    res.redirect('/login');
-                }
-        } else {
+                    } else {
+                        console.log('認証失敗');
+                        res.redirect('/login');
+                    }
+                })
+          } else {
             res.redirect('/login');
         }
     });
