@@ -10,7 +10,7 @@
 <body>
     <header>
         <div class="header-nav">
-            <p>ようこそ、<%= locals.userName %>さん</p>
+            <a>ようこそ、<%= locals.userName %>さん</a>
             <% if(locals.isLoggedIn){ %>
            <a href="/logout"> ログアウト</a>
            <% } else{ %>

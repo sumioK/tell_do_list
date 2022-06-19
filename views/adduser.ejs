@@ -10,16 +10,17 @@
 <body>
     <dev class="title-container">
         <h1 class="title">電話番号の追加</h1>
+        <%- include('header.ejs') %>
     </dev>
-    <form action="/createUser" method="post">
+    <form action="/createPa" method="post">
         <p class='userName-sentence'>利用者氏名</p>
-        <input type="text" class='addInfoUserName' name='addInfoUserName'>
+        <input type="text" class='addPaName' name='addPaName'>
         <p class="user-phoneNo">電話番号</p>
-        <input type="text" class="addInfoUserPhone" name='addInfoUserPhone'>
+        <input type="text" class="addPhoneNum" name='addPhoneNum'>
         <input type="submit" value="登録" class="addInfoSubmit">
     </form>
     <dev class="btn-container">
-        <a href="/user" class="btn">ユーザーへ戻る</a>
+        <a href="/pa" class="btn">登録者一覧へ戻る</a>
     </dev>
 </body>
 </html>

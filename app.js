@@ -31,7 +31,6 @@ app.use(
         saveUninitialized: false,
     })
 )
-
 app.use((req , res , next) => {
     if(req.session.userId === undefined){
         res.locals.userName = 'ゲスト' ;
@@ -67,7 +66,7 @@ app.post('/signup' , (req , res , next) =>{
     const password = req.body.password;
     const password2 = req.body.password2;
 
-        //入力情報に誤りがあった場合登録できないようにする
+     //入力情報に誤りがあった場合/signupへ戻る
     const errors = [];
     if(username === ''){
         errors.push('ユーザー名が入力されていません');
@@ -127,7 +126,7 @@ app.post('/signup' , (req , res , next) =>{
 //ログイン画面の表示
 
 app.get('/login' , (req , res) =>{
-    res.render('login.ejs');
+    res.render('login.ejs' , {errors:[]});
     console.log('ログイン画面が開きました');
 });
 
@@ -135,6 +134,7 @@ app.get('/login' , (req , res) =>{
 
 app.post('/login' , (req , res) =>{
     const email = req.body.email ;
+    const errors =[];
     connection.query(
         'SELECT * FROM users WHERE userMail=?' ,
         [email] , 
@@ -152,7 +152,9 @@ app.post('/login' , (req , res) =>{
                     res.redirect('/');
                     } else {
                         console.log('認証失敗');
-                        res.redirect('/login');
+                        errors.push('パスワードが誤っています');
+                        console.log(errors);
+                        res.render('login.ejs' ,{errors:errors});
                     }
                 })
           } else {
@@ -171,8 +173,34 @@ app.get('/logout' , (req , res ) =>{
 });
 
 
+//電話番号登録画面
+app.get('/adduser' , (req ,res) =>{
+    connection.query(
+        'SELECT * FROM pa' ,
+        (error , results) =>{
+            res.render('adduser.ejs');
+            console.log("adduserが開きました");
+            console.log(results);
+        });
+
+    });
+
+//Pa情報の登録
+app.post('/createPa' , (req , res) =>{
+    const sid = req.session.userId ;
+    connection.query(
+        //情報を追加
+        'INSERT INTO pa(paName ,phoneNUm , userId) VALUES( ? ,? , ? )',
+        [req.body.addPaName,req.body.addPhoneNum,sid],
+        (error ,results) =>{
+            res.redirect('/adduser');
+        }
+    );
+    });
 
 
+
+    
 app.get('/list' , (req ,res) =>{
     //条件分岐：ログインしいなければlistは表示できない
     if(req.session.userId === undefined){
@@ -195,12 +223,12 @@ app.get('/list' , (req ,res) =>{
 
 });
 
-app.get('/user' , (req ,res) =>{
+app.get('/pa' , (req ,res) =>{
     connection.query(
-        'SELECT * FROM userInfo' ,
+        'SELECT * FROM pa' ,
         (error , results) =>{
-            res.render('user.ejs' , {userInfo:results});
-            console.log("userが開きました");
+            res.render('pa.ejs');
+            console.log("paが開きました");
         });
 
 });
@@ -229,33 +257,7 @@ app.post('/create' , (req , res) =>{
             });                  
         });
 
-//電話番号登録
 
-app.get('/tell' , (req ,res) =>{
-    connection.query(
-        'SELECT * FROM userInfo' ,
-        (error , results) =>{
-            res.render('tell.ejs');
-            console.log("tellが開きました");
-            console.log(results);
-        });
-
-    });
-
-
-app.post('/createUser' , (req , res) =>{
-
-    console.log(req.body.addInfoUserName);
-    console.log(req.body.addInfoUserPhone);
-    connection.query(
-        //情報を追加
-        'INSERT INTO userInfo(name ,phone) VALUES(? ,?)',
-        [req.body.addInfoUserName,req.body.addInfoUserPhone],
-        (error ,results) =>{
-            res.redirect('/user')
-        }
-    );
-    });
 
 
 
@@ -279,7 +281,7 @@ connection.query(
     'DELETE FROM userInfo WHERE id=?' ,
     [req.params.id],
     (error , results) => {
-        res.redirect('/user');
+        res.redirect('/pa');
     }
 );     
 });
