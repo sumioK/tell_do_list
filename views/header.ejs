@@ -11,7 +11,11 @@
     <header>
         <div class="header-nav">
             <p>ようこそ、<%= locals.userName %>さん</p>
+            <% if(locals.isLoggedIn){ %>
+           <a href="/logout"> ログアウト</a>
+           <% } else{ %>
            <a href="/login">ログイン</a>
+           <% }%>
         </div>
     </header>
 </body>

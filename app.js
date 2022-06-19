@@ -33,12 +33,12 @@ app.use(
 
 app.use((req , res , next) => {
     if(req.session.userId === undefined){
-        console.log('ログインしていません');
         res.locals.userName = 'ゲスト' ;
+        res.locals.isLoggedIn = false;
         
     }else{
         res.locals.userName = req.session.userName;
-        console.log("ログインしています");
+        res.locals.isLoggedIn = true;
     }
     next();
 });
@@ -75,7 +75,7 @@ app.post('/login' , (req , res) =>{
                 if(req.body.password === results[0].userPassword){
                     req.session.userId = results[0].userId;
                     req.session.userName = results[0].userName;
-                    res.redirect('/list');
+                    res.redirect('/');
                 } else {
                     console.log('認証失敗');
                     res.redirect('/login');
@@ -83,6 +83,15 @@ app.post('/login' , (req , res) =>{
         } else {
             res.redirect('/login');
         }
+    });
+});
+
+
+// ログアウト処理
+
+app.get('/logout' , (req , res ) =>{
+    req.session.destroy((error) =>{
+        res.redirect('/');
     });
 });
 

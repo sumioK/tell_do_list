@@ -8,6 +8,7 @@
     <title>Tell Do List</title>
 </head>
 <body>
+    <%- include('header.ejs') %>
     <dev class="title-cont">
         <h1 class="tdlTitle">Tell Do List</h1>
     </dev>
@@ -15,12 +16,13 @@
         <img src="/images/clipboard.png" class="fImg">
         <img src="/images/phone-call.png" class="lImg">
     </dev>
-    <a href="/login">ログインする</a>
-    <%# 
+
     <dev class="jumpList">
+        <% if(locals.isLoggedIn){ %>
         <a class="btn list-btn" href="/list">リスト一覧へ</a>
         <a class="btn user-btn" href="/user">ユーザー一覧へ</a>
+        <% } %>
     </dev>
-    %>
+
 </body>
 </html>
