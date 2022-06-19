@@ -10,10 +10,22 @@
 <body>
     <dev class='title-container'>
       <h1 class="title">ユーザー一覧</h1>
-      <a href="/addpa" class="add-url"><img src='/images/plus.png' class="add-btn"></a>
-      
+      <a href="/addpa" class="add-url"><img src='/images/plus.png' class="add-btn"></a>     
    </dev>
+   <dev>
+    <% pa.forEach((pa) =>{ %>
+      <li>
+        <div class="paData">
+          <span class="listUserName"><%= pa.paName %></span>
+          <span class="listAction"><%= pa.phoneNum %></span>
+          <form class='delete-user' action="/deletePa/<%=pa.paId%>" method="post">
+            <input class='delete-btn' type="image" src="/images/delete.png" alt="削除" name="deleteUser">
+          </form>
+        </div>
+      </li>
+      <% }) %>
 
+   </dev>
       <dev class="btn">
         <a class="top-btn" href="/">トップへ戻る</a>
       </dev> 

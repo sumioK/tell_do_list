@@ -198,7 +198,17 @@ app.post('/createPa' , (req , res) =>{
     );
     });
 
-
+//Pa一覧画面
+    app.get('/pa' , (req ,res) =>{
+        connection.query(
+            'SELECT * FROM pa WHERE userID =?',
+            [req.session.userId] ,
+            (error , results) =>{
+                res.render('pa.ejs' , {pa:results});
+                console.log("paが開きました");
+            });
+    
+    });
 
     
 app.get('/list' , (req ,res) =>{
@@ -223,15 +233,6 @@ app.get('/list' , (req ,res) =>{
 
 });
 
-app.get('/pa' , (req ,res) =>{
-    connection.query(
-        'SELECT * FROM pa' ,
-        (error , results) =>{
-            res.render('pa.ejs');
-            console.log("paが開きました");
-        });
-
-});
 
 app.get('/new' , (req ,res) =>{
     connection.query(
