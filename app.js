@@ -95,18 +95,28 @@ app.get('/logout' , (req , res ) =>{
     });
 });
 
+
+
+
 app.get('/list' , (req ,res) =>{
+    //条件分岐：ログインしいなければlistは表示できない
     if(req.session.userId === undefined){
         console.log('ログインしていません');
+        connection.query(
+            'SELECT * FROM todoList' ,
+            (error , results) =>{
+                res.render('login.ejs');
+                console.log('ログインしてください')
+            });
     } else{
-        console.log('ログインしています。');
+        connection.query(
+            'SELECT * FROM todoList' ,
+            (error , results) =>{
+                res.render('list.ejs');
+                console.log("listが開きました");
+            });
     }
-    connection.query(
-        'SELECT * FROM todoList' ,
-        (error , results) =>{
-            res.render('list.ejs');
-            console.log("listが開きました");
-        });
+  
 
 });
 
