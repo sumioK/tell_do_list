@@ -211,7 +211,7 @@ app.post('/createPa' , (req , res) =>{
     });
 
 
-//TODOの追加処理
+//TODOの追加画面
 app.get('/addlist' , (req ,res) =>{
     connection.query(
         'SELECT * FROM lists' ,
@@ -221,14 +221,17 @@ app.get('/addlist' , (req ,res) =>{
         });
 
     });
-
+//TODOの追加処理
 app.post('/create' , (req , res) =>{
-    connection.query(
-                'INSERT INTO lists(listFor ,listAction ,userId) VALUES(? ,? ,?)',
-                    [req.body.addListUserName,req.body.addListAction,req.session.userId],
+    const sid = req.session.userId ;
+    console.log('createが実行');
+    connection.query(           
+                'INSERT INTO lists (paName ,listAction ,userId) VALUES(? ,? ,?)',
+                [req.body.addListPaName , req.body.addListAction , sid ],
                 (error , results) =>{
                     connection.query(
-                        'UPDATE lists , pa SET lists.phoneNum = pa.phoneNum WHERE lists.listFor = pa.paName',
+                        //'UPDATE lists , pa SET lists.phoneNum = pa.phoneNum WHERE lists.listFor = pa.paName AND lists.userId =  pa.userId',
+                        'UPDATE lists , pa SET lists.phoneNum = pa.phoneNum WHERE lists.paName = pa.paName AND lists.userId =  pa.userId',
                         (error , results) =>{
                             res.redirect('/list');
                         }
