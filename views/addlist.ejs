@@ -11,6 +11,10 @@
     <dev class="title-container">
         <h1 class="title">新しい項目の追加</h1>
     </dev>
+    <% if(locals.isLoggedIn === false){ %> 
+        <h1>機能を使用するにはログインしてください</h1>
+        <a href="/" class="btn">トップ画面へ戻る</a>
+        <% } else {%>
     <form action="/create" method="post" class="form">
         <dev clas='add1'>
             <p class="addSentence1">利用者氏名</p>
@@ -25,5 +29,6 @@
     <dev class='btn-container'>
         <a href="/list" class="btn">リストへ戻る</a>
     </dev>
+    <% } %>
 </body>
 </html>

@@ -12,6 +12,9 @@
   <%- include('header.ejs') %>
     <dev class="title-container">
       <h1 class="title">やることリスト</h1>
+      <% if(locals.isLoggedIn === false){ %> 
+        <h1>機能を使用するにはログインしてください</h1>
+        <% } else {%>
       <% lists.forEach((lists) =>{ %>
         <li>
           <div class="lists">
@@ -20,13 +23,14 @@
             <% if(lists.listAction === '電話'){ %>
             <span clss="listPhoneNum">(<%= lists.phoneNum %> )</span>
             <% }%>
-            <form class='delete-user' action="/deletePa/<%= lists.paId %>" method="post">
-              <input class='delete-btn' type="image" src="/images/delete.png" alt="削除" name="deleteUser">
+            <form class='delete-user' action="/deleteList/<%= lists.listId %>" method="post">
+              <input class='delete-btn' type="image" src="/images/delete.png" alt="削除" name="deleteLIst">
             </form>
           </div>
         </li>
         <% }) %>
       <a href="/addlist" class="add-url"><img src='/images/plus.png' class="add-btn"></a>
+      <% } %>
       <a href="/">トップへ戻る</a>
    </dev>
 

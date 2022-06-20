@@ -8,10 +8,14 @@
     <title>tell</title>
 </head>
 <body>
+    <%- include('header.ejs') %>
     <dev class="title-container">
         <h1 class="title">電話番号の追加</h1>
-        <%- include('header.ejs') %>
     </dev>
+    <% if(locals.isLoggedIn === false){ %> 
+        <h1>機能を使用するにはログインしてください</h1>
+        <a href="/" class="btn">トップ画面へ戻る</a>
+        <% } else {%>
     <form action="/createPa" method="post">
         <p class='userName-sentence'>利用者氏名</p>
         <input type="text" class='addPaName' name='addPaName'>
@@ -22,5 +26,7 @@
     <dev class="btn-container">
         <a href="/pa" class="btn">登録者一覧へ戻る</a>
     </dev>
+         <% } %>
+ 
 </body>
 </html>

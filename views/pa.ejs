@@ -8,8 +8,12 @@
     <title>PatientList</title>
 </head>
 <body>
+  <%- include('header.ejs') %>
     <dev class='title-container'>
       <h1 class="title">ユーザー一覧</h1>
+      <% if(locals.isLoggedIn === false){ %> 
+        <h1>機能を使用するにはログインしてください</h1>
+        <% } else {%>
       <a href="/addpa" class="add-url"><img src='/images/plus.png' class="add-btn"></a>     
    </dev>
    <dev>
@@ -19,12 +23,12 @@
           <span class="listUserName"><%= pa.paName %></span>
           <span class="listAction"><%= pa.phoneNum %></span>
           <form class='delete-user' action="/deletePa/<%=pa.paId%>" method="post">
-            <input class='delete-btn' type="image" src="/images/delete.png" alt="削除" name="deleteUser">
+            <input class='delete-btn' type="image" src="/images/delete.png" alt="削除" name="deletePa">
           </form>
         </div>
       </li>
       <% }) %>
-
+      <% } %>
    </dev>
       <dev class="btn">
         <a class="top-btn" href="/">トップへ戻る</a>

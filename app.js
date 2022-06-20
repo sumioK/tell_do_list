@@ -173,7 +173,7 @@ app.get('/logout' , (req , res ) =>{
 });
 
 
-//電話番号登録画面
+//pa情報登録画面
 app.get('/addpa' , (req ,res) =>{
     connection.query(
         'SELECT * FROM pa' ,
@@ -230,7 +230,6 @@ app.post('/create' , (req , res) =>{
                 [req.body.addListPaName , req.body.addListAction , sid ],
                 (error , results) =>{
                     connection.query(
-                        //'UPDATE lists , pa SET lists.phoneNum = pa.phoneNum WHERE lists.listFor = pa.paName AND lists.userId =  pa.userId',
                         'UPDATE lists , pa SET lists.phoneNum = pa.phoneNum WHERE lists.paName = pa.paName AND lists.userId =  pa.userId',
                         (error , results) =>{
                             res.redirect('/list');
@@ -239,16 +238,14 @@ app.post('/create' , (req , res) =>{
             });                  
         });
 
-
-
+//listの一覧画面
 app.get('/list' , (req ,res) =>{
-    //条件分岐：ログインしいなければlistは表示できない
     if(req.session.userId === undefined){
         console.log('ログインしていません');
         connection.query(
             'SELECT * FROM lists' ,
             (error , results) =>{
-                res.render('login.ejs' , {errors:[]});
+                res.render('list.ejs' , {lists:[]});
                 console.log('ログインしてください')
             });
     } else{
@@ -263,29 +260,30 @@ app.get('/list' , (req ,res) =>{
 });
 
 
-    //リストの削除処理
-app.post('/deleteList/:id' , (req , res) => {
-console.log(req.params.id);
-connection.query(
-    'DELETE FROM todoList WHERE id=?' ,
-    [req.params.id],
-    (error , results) => {
-        res.redirect('/list');
-    }
-);     
-});
 
 
-//登録情報の削除処理
-app.post('/deleteUser/:id' , (req , res) => {
+//paの削除処理
+app.post('/deletePa/:id' , (req , res) => {
 console.log(req.params.id);
 connection.query(
-    'DELETE FROM userInfo WHERE id=?' ,
+    'DELETE FROM pa WHERE paId=?' ,
     [req.params.id],
     (error , results) => {
         res.redirect('/pa');
     }
 );     
 });
+
+//listの削除処理
+app.post('/deleteList/:id' , (req , res) => {
+    console.log(req.params.id);
+    connection.query(
+        'DELETE FROM lists WHERE listId=?' ,
+        [req.params.id],
+        (error , results) => {
+            res.redirect('/list');
+        }
+    );     
+    });
 
 app.listen(3300);
