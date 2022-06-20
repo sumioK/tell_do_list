@@ -246,21 +246,20 @@ app.get('/list' , (req ,res) =>{
     if(req.session.userId === undefined){
         console.log('ログインしていません');
         connection.query(
-            'SELECT * FROM todoList' ,
+            'SELECT * FROM lists' ,
             (error , results) =>{
                 res.render('login.ejs' , {errors:[]});
                 console.log('ログインしてください')
             });
     } else{
         connection.query(
-            'SELECT * FROM todoList' ,
+            'SELECT * FROM lists WHERE userId =?' ,
+            [req.session.userId] ,
             (error , results) =>{
-                res.render('list.ejs');
-                console.log("listが開きました");
+                res.render('list.ejs' , {lists:results});
+                console.log(results);
             });
     }
-    
-
 });
 
 
