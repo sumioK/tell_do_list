@@ -1,0 +1,20 @@
+header {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  height: 15vh;
+}
+
+header .header-nav {
+  height: 10vh;
+}
+
+header .top-title {
+  font-size: 10vh;
+  margin-top: 0px;
+  margin-bottom: 0px;
+  margin-left: 25%;
+  text-align: center;
+  width: 50%;
+}
+/*# sourceMappingURL=style.css.map */

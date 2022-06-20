@@ -1,0 +1,15 @@
+header{
+    display: flex;
+    height: 15vh;
+    .header-nav{
+        height: 10vh;
+    }
+    .top-title{
+        font-size: 10vh;
+        margin-top: 0px;
+        margin-bottom: 0px;
+        margin-left: 25%;
+        text-align: center;
+        width: 50%;
+    }
+}
