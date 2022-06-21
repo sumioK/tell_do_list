@@ -1,20 +1,108 @@
-header {
+body {
+  margin: 0%;
+  background-color: #030227;
+  color: white;
+}
+
+body header {
+  background-color: white;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  height: 15vh;
+  height: 8vh;
+  color: black;
 }
 
-header .header-nav {
-  height: 10vh;
+body header h1 {
+  margin-left: 1vw;
 }
 
-header .top-title {
-  font-size: 10vh;
+body header .header-nav {
+  height: 8vh;
+  position: absolute;
+  right: 1vw;
+  top: 0;
+  font-size: 2vh;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+body header .header-nav p {
+  margin-right: 1vw;
+  margin-top: 2vh;
+}
+
+body header .header-nav a {
+  text-decoration: none;
+}
+
+body header .header-nav a img {
+  height: 4vh;
+  width: auto;
+  margin-top: 1vw;
+  margin-right: 1vh;
+}
+
+body header .header-nav a img:hover {
+  opacity: 0.3;
+}
+
+body header .top-title {
+  font-size: 4vh;
   margin-top: 0px;
   margin-bottom: 0px;
-  margin-left: 25%;
+  height: 8vh;
+  line-height: 8vh;
+}
+
+body .images {
+  margin: 0 auto;
+  margin-top: 5vw;
+  display: block;
+  width: 61vw;
+  background-color: white;
+}
+
+body .images img {
+  width: 30vw;
+}
+
+body .images .limg {
+  display: block;
+}
+
+body .jumpList {
+  display: block;
+  margin-top: 5vw;
   text-align: center;
-  width: 50%;
+}
+
+body .jumpList a {
+  text-decoration: none;
+  color: white;
+  font-size: 2vw;
+}
+
+body .jumpList a:hover {
+  color: gray;
+}
+
+body .list-title {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+body .list-title h1 {
+  font-size: 5vh;
+}
+
+body .list-title .add-url img {
+  height: 5vh;
+}
+
+body li {
+  list-style: none;
 }
 /*# sourceMappingURL=style.css.map */

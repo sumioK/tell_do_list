@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="js">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -7,20 +8,22 @@
     <link rel="stylesheet"  type='text/css' href="/css/style.css">
     <title>Tell Do List</title>
 </head>
+
 <body>
     <header>
-        <h1 class="top-title">Tell Do List</h1>
+
         <%- include('header.ejs') %>
     </header>
 
     <dev class="images">
-        <img src="/images/clipboard.png" class="fImg">
-        <img src="/images/phone-call.png" class="lImg">
+        <img src="/images/phone-call.png" class="fImg">
+        <img src="/images/clipboard.png" class="lImg">
     </dev>
 
     <dev class="jumpList">
 
         <a class="btn list-btn" href="/list">リスト一覧へ</a>
+        <a>/</a>
         <a class="btn user-btn" href="/pa">ユーザー一覧へ</a>
         <% if(locals.isLoggedIn){ %> <% } %>
     </dev>

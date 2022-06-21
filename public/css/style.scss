@@ -1,15 +1,88 @@
-header{
-    display: flex;
-    height: 15vh;
-    .header-nav{
-        height: 10vh;
+body{
+    margin: 0%;
+    background-color: rgb(3, 2, 39);
+    color: white;
+    header{
+        background-color: rgb(255, 255, 255);
+        display: flex;
+        height: 8vh;
+        color: black;
+        h1{
+            margin-left: 1vw;
+        }
+
+        .header-nav{
+            height: 8vh;
+            position: absolute;
+            right: 1vw;
+            top: 0 ;
+            font-size: 2vh;
+            display: flex;
+            p{
+                margin-right: 1vw;
+                margin-top: 2vh;
+            }
+            a{
+                text-decoration: none;
+                img{
+                    height: 4vh;
+                    width: auto;
+                    margin-top: 1vw;
+                    margin-right: 1vh;
+                    &:hover{
+                        opacity: 0.3;
+                    }
+                }
+            }
+        }
+        .top-title{
+            font-size: 4vh;
+            margin-top: 0px;
+            margin-bottom: 0px;
+            height: 8vh;
+            line-height: 8vh;
+        }
     }
-    .top-title{
-        font-size: 10vh;
-        margin-top: 0px;
-        margin-bottom: 0px;
-        margin-left: 25%;
+    .images{
+        margin: 0 auto;
+        margin-top: 5vw;
+        display: block;
+        width: 61vw;
+        background-color: white;
+        img{
+            width: 30vw;
+        }
+        .limg{
+            display: block;
+            
+        }
+    }
+    .jumpList{
+        display: block;
+        margin-top: 5vw;
         text-align: center;
-        width: 50%;
+
+        a{
+            text-decoration: none;
+            color: white;
+            font-size: 2vw;
+            &:hover{
+                color: gray;
+            }
+        }
+    }
+    .list-title{
+        display: flex;
+        h1{
+            font-size: 5vh;
+        }
+        .add-url{
+            img{
+                height: 5vh;
+            }
+        }
+    }
+    li{
+        list-style: none;
     }
 }

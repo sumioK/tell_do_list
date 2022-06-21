@@ -4,35 +4,42 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet"  type='text/css' href="/css/list.css">
+    <link rel="stylesheet"  type='text/css' href="/css/style.css">
     <title>Lists</title>
 </head>
 
 <body>
-  <%- include('header.ejs') %>
-    <dev class="title-container">
-      <h1 class="title">やることリスト</h1>
-      <% if(locals.isLoggedIn === false){ %> 
-        <h1>機能を使用するにはログインしてください</h1>
-        <% } else {%>
-      <% lists.forEach((lists) =>{ %>
-        <li>
-          <div class="lists">
-            <span class="listPaName"><%= lists.paName %></span>
-            <span class="listAction"><%= lists.listAction %></span>
-            <% if(lists.listAction === '電話'){ %>
-            <span clss="listPhoneNum">(<%= lists.phoneNum %> )</span>
-            <% }%>
-            <form class='delete-user' action="/deleteList/<%= lists.listId %>" method="post">
-              <input class='delete-btn' type="image" src="/images/delete.png" alt="削除" name="deleteLIst">
-            </form>
-          </div>
-        </li>
-        <% }) %>
-      <a href="/addlist" class="add-url"><img src='/images/plus.png' class="add-btn"></a>
-      <% } %>
-      <a href="/">トップへ戻る</a>
-   </dev>
+  <header>
+     <%- include('header.ejs') %>
+  </header>
+
+  <dev class="list-title">
+    <% if(locals.isLoggedIn === false){ %> 
+      <h1>機能を使用するにはログインしてください</h1>
+      <% } else {%>
+        <h1 class="title">やることリスト</h1>
+        <a href="/addlist" class="add-url"><img src='/images/plus.png' class="add-btn"></a>
+  </dev>
+
+  <% lists.forEach((lists) =>{ %>
+    <li>
+      <div class="lists">
+        <span class="listPaName"><%= lists.paName %></span>
+        <span class="listAction"><%= lists.listAction %></span>
+        <% if(lists.listAction === '電話'){ %>
+        <span clss="listPhoneNum">(<%= lists.phoneNum %> )</span>
+        <% }%>
+        <form class='delete-user' action="/deleteList/<%= lists.listId %>" method="post">
+          <input class='delete-btn' type="image" src="/images/delete.png" alt="削除" name="deleteLIst">
+        </form>
+      </div>
+    </li>
+    <% }) %>
+  <% } %>
+  <dev class="jumpList">
+    <a href="/">トップへ戻る</a>
+  </dev>
+
 
   
      
