@@ -1,7 +1,22 @@
 body {
+  width: 100%;
   margin: 0%;
-  background-color: #030227;
   color: white;
+  background-image: url(/images/background1.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+body:before {
+  content: '';
+  background-color: rgba(0, 0, 0, 0.5);
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: block;
+  z-index: -1;
 }
 
 body header {
@@ -9,18 +24,27 @@ body header {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  height: 8vh;
+  height: 80px;
   color: black;
 }
 
-body header h1 {
-  margin-left: 1vw;
+body header a {
+  text-decoration: none;
+  color: black;
+}
+
+body header a .top-title {
+  margin-top: 0px;
+  margin-left: 16px;
+  font-size: 56px;
+  margin-bottom: 0px;
+  height: 8vh;
 }
 
 body header .header-nav {
-  height: 8vh;
+  height: 80px;
   position: absolute;
-  right: 1vw;
+  right: 20px;
   top: 0;
   font-size: 2vh;
   display: -webkit-box;
@@ -29,52 +53,50 @@ body header .header-nav {
 }
 
 body header .header-nav p {
-  margin-right: 1vw;
-  margin-top: 2vh;
+  margin-right: 48px;
+  margin-top: 24px;
 }
 
 body header .header-nav a {
   text-decoration: none;
+  margin-right: 32px;
 }
 
 body header .header-nav a img {
   height: 4vh;
   width: auto;
-  margin-top: 1vw;
-  margin-right: 1vh;
+  margin-top: 16px;
 }
 
 body header .header-nav a img:hover {
   opacity: 0.3;
 }
 
-body header .top-title {
-  font-size: 4vh;
-  margin-top: 0px;
-  margin-bottom: 0px;
-  height: 8vh;
-  line-height: 8vh;
+body .top-center {
+  text-align: center;
 }
 
-body .images {
-  margin: 0 auto;
-  margin-top: 5vw;
-  display: block;
-  width: 61vw;
-  background-color: white;
+body .top-center .tell {
+  font-size: 120px;
+  margin-top: 40px;
+  margin-bottom: 40px;
 }
 
-body .images img {
-  width: 30vw;
+body .top-center .do {
+  font-size: 120px;
+  margin-top: 40px;
+  margin-bottom: 40px;
 }
 
-body .images .limg {
-  display: block;
+body .top-center .list {
+  font-size: 120px;
+  margin-top: 40px;
+  margin-bottom: 40px;
 }
 
 body .jumpList {
   display: block;
-  margin-top: 5vw;
+  margin-top: 80px;
   text-align: center;
 }
 
@@ -98,8 +120,18 @@ body .list-title h1 {
   font-size: 5vh;
 }
 
+body .list-title .add-url {
+  height: 48px;
+  margin-top: 40px;
+  margin-left: 16px;
+}
+
+body .list-title .add-url:hover {
+  opacity: 0.8;
+}
+
 body .list-title .add-url img {
-  height: 5vh;
+  height: 48px;
 }
 
 body li {
