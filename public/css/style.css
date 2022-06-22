@@ -114,10 +114,13 @@ body .list-title {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
 }
 
 body .list-title h1 {
-  font-size: 5vh;
+  font-size: 48px;
 }
 
 body .list-title .add-url {
@@ -136,5 +139,36 @@ body .list-title .add-url img {
 
 body li {
   list-style: none;
+}
+
+body li .lists {
+  padding-top: 10px;
+  padding-bottom: 10px;
+  border-bottom: 2px gray solid;
+  font-size: 24px;
+  list-style: none;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: nowrap;
+      flex-wrap: nowrap;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  width: 100%;
+}
+
+body li .lists .paPhone {
+  margin-left: 16px;
+}
+
+body li .lists .delete-btn {
+  height: 32px;
+  margin-left: 16px;
+}
+
+body li .lists .delete-btn:hover {
+  opacity: 0.8;
 }
 /*# sourceMappingURL=style.css.map */

@@ -95,8 +95,9 @@ body{
     }
     .list-title{
         display: flex;
+        justify-content: center;
         h1{
-            font-size: 5vh;
+            font-size: 48px;
         }
         .add-url{
             height: 48px;
@@ -113,5 +114,28 @@ body{
     }
     li{
         list-style: none;
+        .lists{
+            padding-top: 10px;
+            padding-bottom: 10px;
+            border-bottom: 2px gray solid;
+            font-size: 24px;
+            list-style: none;
+            display: flex;
+            flex-wrap: nowrap;
+            flex-direction: row;
+            width: 100%;
+            .paPhone{
+                margin-left: 16px;
+            }
+            .delete-btn{
+                height: 32px;
+                margin-left: 16px;
+                &:hover{
+                    opacity: 0.8;
+                }
+            }
+            
+        }
     }
+    
 }

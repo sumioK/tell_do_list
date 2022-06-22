@@ -11,19 +11,19 @@
   <header>
     <%- include('header.ejs') %>
  </header>
-    <dev class='title-container'>
-      <h1 class="title">ユーザー一覧</h1>
+    <dev class='list-title'>
       <% if(locals.isLoggedIn === false){ %> 
         <h1>機能を使用するにはログインしてください</h1>
         <% } else {%>
+          <h1 class="title">ユーザー一覧</h1>
       <a href="/addpa" class="add-url"><img src='/images/plus.png' class="add-btn"></a>     
    </dev>
    <dev>
     <% pa.forEach((pa) =>{ %>
       <li>
-        <div class="paData">
-          <span class="listUserName"><%= pa.paName %></span>
-          <span class="listAction"><%= pa.phoneNum %></span>
+        <div class="lists">
+          <span class="paName"><%= pa.paName %>様</span>
+          <span class="paPhone">TEL:(<%= pa.phoneNum %>)</span>
           <form class='delete-user' action="/deletePa/<%=pa.paId%>" method="post">
             <input class='delete-btn' type="image" src="/images/delete.png" alt="削除" name="deletePa">
           </form>
@@ -32,9 +32,9 @@
       <% }) %>
       <% } %>
    </dev>
-      <dev class="btn">
-        <a class="top-btn" href="/">トップへ戻る</a>
-      </dev> 
+   <dev class="jumpList">
+    <a href="/">トップへ戻る</a>
+  </dev>
      
 </body>
 </html>
