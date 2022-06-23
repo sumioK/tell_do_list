@@ -11,13 +11,13 @@
   <header>
     <%- include('header.ejs') %>
  </header>
-    <dev class='list-title'>
       <% if(locals.isLoggedIn === false){ %> 
-        <h1>機能を使用するにはログインしてください</h1>
+        <h1 class="need-login">機能を使用するにはログインまたは新規登録してください</h1>
         <% } else {%>
+        <dev class='list-title'>
           <h1 class="title">ユーザー一覧</h1>
-      <a href="/addpa" class="add-url"><img src='/images/plus.png' class="add-btn"></a>     
-   </dev>
+          <a href="/addpa" class="add-url"><img src='/images/plus.png' class="add-btn"></a>     
+        </dev>
    <dev>
     <% pa.forEach((pa) =>{ %>
       <li>
