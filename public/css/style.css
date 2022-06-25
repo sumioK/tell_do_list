@@ -1,9 +1,10 @@
-@media screen and (min-width: 661px) {
+@media screen and (min-width: 961px) {
   body {
     width: 100%;
+    height: 100vh;
     margin: 0%;
     color: white;
-    background-image: url(/images/background3.png);
+    background-image: url(/images/background4.png);
     background-size: cover;
     background-repeat: no-repeat;
     background-position-y: 80px;
@@ -81,6 +82,9 @@
   }
   body .jumpList a:hover {
     color: gray;
+  }
+  body .jumpList .bar {
+    font-size: 32px;
   }
   body .need-login {
     margin-top: 160px;
@@ -209,6 +213,275 @@
     margin-top: 40px;
     text-align: center;
     margin-bottom: 40px;
+  }
+  body .signup-form .signup-submit input {
+    width: 120px;
+    height: 32px;
+  }
+  body .add-form {
+    display: block;
+    width: 32%;
+    margin: 0 auto;
+    margin-top: 160px;
+    border: solid 2px;
+    border-radius: 10px;
+    padding: 80px 24px;
+  }
+  body .add-form .add-title {
+    text-align: center;
+    font-size: 56px;
+    margin-top: 40px;
+  }
+  body .add-form p {
+    text-align: center;
+    font-size: 40px;
+  }
+  body .add-form .add-box {
+    display: block;
+    text-align: center;
+  }
+  body .add-form .add-box .add-input {
+    width: 320px;
+    height: 32px;
+  }
+  body .add-form .add-submit {
+    display: block;
+    margin-top: 40px;
+    text-align: center;
+    margin-bottom: 40px;
+  }
+  body .add-form .add-submit input {
+    width: 120px;
+    height: 32px;
+  }
+  body .guide .guide-title {
+    text-align: center;
+    font-size: 48px;
+  }
+  body .guide .guidelist-cont {
+    width: 75%;
+  }
+  body .guide .guidelist-cont .guidelist {
+    display: block;
+    font-size: 32px;
+  }
+}
+
+@media screen and (max-width: 960px) {
+  body {
+    width: 100%;
+    height: 100vh;
+    margin: 0%;
+    color: white;
+    background-image: url(/images/background3.png);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position-y: 64px;
+  }
+  body header {
+    background-color: white;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    height: 64px;
+    color: black;
+  }
+  body header a {
+    text-decoration: none;
+    color: black;
+  }
+  body header a .top-title {
+    margin-top: 0px;
+    margin-left: 16px;
+    font-size: 48px;
+    margin-bottom: 0px;
+  }
+  body header .header-nav {
+    height: 64px;
+    position: absolute;
+    right: 0px;
+    top: 0;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+  }
+  body header .header-nav p {
+    margin-right: 32px;
+    font-size: 24px;
+    margin-top: 16px;
+  }
+  body header .header-nav a {
+    text-decoration: none;
+    margin-right: 16px;
+  }
+  body header .header-nav a img {
+    height: 32px;
+    width: 32px;
+    margin-top: 16px;
+  }
+  body header .header-nav a img:hover {
+    opacity: 0.3;
+  }
+  body .top-center {
+    text-align: center;
+  }
+  body .top-center .tell {
+    font-size: 104px;
+    margin-top: 8vh;
+    margin-bottom: 40px;
+  }
+  body .top-center .do {
+    font-size: 104px;
+    margin-top: 8vh;
+  }
+  body .top-center .list {
+    font-size: 104px;
+    margin-top: 8vh;
+    margin-bottom: 40px;
+  }
+  body .jumpList {
+    display: block;
+    margin-top: 80px;
+    text-align: center;
+  }
+  body .jumpList a {
+    text-decoration: none;
+    color: white;
+    font-size: 24px;
+  }
+  body .jumpList a:hover {
+    color: gray;
+  }
+  body .jumpList .bar {
+    font-size: 32px;
+  }
+  body .need-login {
+    margin-top: 160px;
+    text-align: center;
+    margin-bottom: 160px;
+    font-size: 40px;
+  }
+  body .list-title {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+  }
+  body .list-title h1 {
+    font-size: 40px;
+  }
+  body .list-title .add-url {
+    height: 40px;
+    margin-top: 26.8px;
+    margin-left: 16px;
+  }
+  body .list-title .add-url:hover {
+    opacity: 0.8;
+  }
+  body .list-title .add-url img {
+    height: 48px;
+  }
+  body li {
+    list-style: none;
+    width: 90%;
+  }
+  body li .lists {
+    padding-top: 10px;
+    margin-left: 10%;
+    border-bottom: 2px gray solid;
+    font-size: 24px;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-wrap: nowrap;
+        flex-wrap: nowrap;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    width: 100%;
+  }
+  body li .lists .paPhone {
+    margin-left: 16px;
+  }
+  body li .lists .delete-btn {
+    height: 32px;
+    margin-left: 16px;
+  }
+  body li .lists .delete-btn:hover {
+    opacity: 0.8;
+  }
+  body .login-form {
+    display: block;
+    width: 56%;
+    margin: 0 auto;
+    margin-top: 132px;
+    border: solid 2px;
+    border-radius: 10px;
+    padding: 80px 24px;
+  }
+  body .login-form .login-title {
+    text-align: center;
+    font-size: 40px;
+    margin-top: 32px;
+  }
+  body .login-form p {
+    text-align: center;
+    font-size: 32px;
+  }
+  body .login-form .login-box {
+    display: block;
+    text-align: center;
+  }
+  body .login-form .login-box .login-input {
+    width: 304px;
+    height: 24px;
+  }
+  body .login-form .login-submit {
+    display: block;
+    margin-top: 40px;
+    text-align: center;
+    margin-bottom: 40px;
+  }
+  body .login-form .login-submit input {
+    width: 120px;
+    height: 32px;
+  }
+  body .signup-form {
+    display: block;
+    width: 56%;
+    margin: 0 auto;
+    margin-top: 60px;
+    border: solid 2px;
+    border-radius: 10px;
+    padding: 80px 24px;
+  }
+  body .signup-form .signup-title {
+    text-align: center;
+    font-size: 40px;
+    margin-top: 32px;
+  }
+  body .signup-form p {
+    text-align: center;
+    font-size: 24px;
+    margin-top: 16px;
+    margin-bottom: 16px;
+  }
+  body .signup-form .signup-box {
+    display: block;
+    text-align: center;
+  }
+  body .signup-form .signup-box .signup-input {
+    width: 240px;
+    height: 24px;
+  }
+  body .signup-form .signup-submit {
+    display: block;
+    margin-top: 40px;
+    text-align: center;
+    margin-bottom: 24px;
   }
   body .signup-form .signup-submit input {
     width: 120px;

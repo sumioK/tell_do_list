@@ -14,7 +14,7 @@
   </header>
 
   <% if(locals.isLoggedIn === false){ %> 
-    <h1 class="need-login">機能を使用するにはログインまたは新規登録してください</h1>
+    <h1 class="need-login">ログインまたは新規登録してください</h1>
     <% } else {%>
       <dev class="list-title">
         <h1 class="title">やることリスト</h1>
@@ -27,7 +27,7 @@
         <span class="listPaName"><%= lists.paName %>様</span>
         <span class="listAction"><%= lists.listAction %></span>
         <% if(lists.listAction === '電話'){ %>
-        <span clss="listPhoneNum">(<%= lists.phoneNum %> )</span>
+        <span clss="listPhoneNum"> (TEL:<%= lists.phoneNum %> )</span>
         <% }%>
         <form class='delete-user' action="/deleteList/<%= lists.listId %>" method="post">
           <input class='delete-btn' type="image" src="/images/delete.png" alt="削除" name="deleteLIst">

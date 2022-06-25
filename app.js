@@ -193,7 +193,7 @@ app.post('/createPa' , (req , res) =>{
         'INSERT INTO pa(paName ,phoneNUm , userId) VALUES( ? ,? , ? )',
         [req.body.addPaName,req.body.addPhoneNum,sid],
         (error ,results) =>{
-            res.redirect('/list');
+            res.redirect('/pa');
         }
     );
     });

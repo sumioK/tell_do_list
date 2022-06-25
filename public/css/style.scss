@@ -1,10 +1,10 @@
-@media screen and (min-width:661px) {
+@media screen and (min-width:961px) {
     body{
         width: 100%;
+        height: 100vh;
         margin: 0%;
-        //background-color: rgb(3, 2, 39);
         color: white;
-        background-image: url(/images/background3.png);
+        background-image: url(/images/background4.png);
         background-size: cover;
         background-repeat: no-repeat;
         background-position-y: 80px;
@@ -80,6 +80,9 @@
                 &:hover{
                     color: gray;
                 }
+            }
+            .bar{
+                font-size: 32px;
             }
         }
         .need-login{
@@ -262,6 +265,269 @@
     }
     
 }
-@media screen and (max-width:660px){
-   
+@media screen and (max-width:960px ){
+    body{
+        width: 100%;
+        height: 100vh;
+        margin: 0%;
+        color: white;
+        background-image: url(/images/background3.png);
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position-y: 64px;
+        header{
+            background-color: rgb(255, 255, 255);
+            display: flex;
+            height: 64px;
+            color: black;
+            a{
+                text-decoration: none;
+                color:black;
+                .top-title{
+                    margin-top: 0px;
+                    margin-left: 16px;
+                    font-size: 48px;
+                    margin-bottom: 0px;
+                }
+            }
+    
+            .header-nav{
+                height: 64px;
+                position: absolute;
+                right: 0px;
+                top: 0 ;
+                display: flex;
+                p{
+                    margin-right: 32px;
+                    font-size: 24px;
+                    margin-top: 16px;
+                }
+                a{
+                    text-decoration: none;
+                    margin-right: 16px;
+                    img{
+                        height: 32px;
+                        width: 32px;
+                        margin-top: 16px;
+                        &:hover{
+                            opacity: 0.3;
+                        }
+                    }
+                }
+            }
+    
+        }
+        .top-center{
+            text-align: center;
+            .tell{
+                font-size: 104px;
+                margin-top: 8vh;
+                margin-bottom: 40px;
+            }
+            .do{
+                font-size: 104px;
+                margin-top: 8vh;
+            }
+            .list{
+                font-size: 104px;
+                margin-top: 8vh;
+                margin-bottom: 40px;
+            }
+        }
+    
+        .jumpList{
+            display: block;
+            margin-top: 80px;
+            text-align: center;
+    
+            a{
+                text-decoration: none;
+                color: white;
+                font-size: 24px;
+                &:hover{
+                    color: gray;
+                }
+            }
+            .bar{
+                font-size: 32px;
+            }
+        }
+        .need-login{
+            margin-top: 160px;
+            text-align: center;
+            margin-bottom: 160px;
+            font-size: 40px;
+        }
+        .list-title{
+            display: flex;
+            justify-content: center;
+            h1{
+                font-size: 40px;
+            }
+            .add-url{
+                height: 40px;
+                margin-top: 26.8px;
+                margin-left: 16px;
+                &:hover{
+                    opacity: 0.8;
+                }
+                img{
+                    height: 48px;
+    
+                }
+            }
+        }
+        li{
+            list-style: none;
+            width: 90%;
+            .lists{
+                padding-top: 10px;
+                margin-left: 10%;
+                border-bottom: 2px gray solid;
+                font-size: 24px;
+                display: flex;
+                flex-wrap: nowrap;
+                flex-direction: row;
+                width: 100%;
+                .paPhone{
+                    margin-left: 16px;
+                }
+                .delete-btn{
+                    height: 32px;
+                    margin-left: 16px;
+                    &:hover{
+                        opacity: 0.8;
+                    }
+                }
+                
+            }
+        }
+        .login-form{
+            display: block;
+            width: 56%;
+            margin: 0 auto;
+            margin-top: 132px;
+            border: solid 2px;
+            border-radius: 10px;
+            padding: 80px 24px;
+            .login-title{
+                text-align: center;
+                font-size: 40px;
+                margin-top: 32px;
+            }
+            p{
+                text-align: center;
+                font-size: 32px;
+            }
+            .login-box{
+                display: block;
+                text-align: center;
+                .login-input{
+                    width: 304px;
+                    height:24px;
+                }
+            }
+            .login-submit{
+                display: block;
+                margin-top: 40px;
+                text-align: center;
+                margin-bottom: 40px;
+                input{
+                    width: 120px;
+                    height: 32px
+                }
+                
+            }
+        }
+        .signup-form{
+            display: block;
+            width: 56%;
+            margin: 0 auto;
+            margin-top: 60px;
+            border: solid 2px;
+            border-radius: 10px;
+            padding: 80px 24px;
+            .signup-title{
+                text-align: center;
+                font-size: 40px;
+                margin-top: 32px;
+            }
+            p{
+                text-align: center;
+                font-size: 24px;
+                margin-top: 16px;
+                margin-bottom: 16px;
+            }
+            .signup-box{
+                display: block;
+                text-align: center;
+                .signup-input{
+                    width: 240px;
+                    height:24px;
+                }
+            }
+            .signup-submit{
+                display: block;
+                margin-top: 40px;
+                text-align: center;
+                margin-bottom: 24px;
+                input{
+                    width: 120px;
+                    height: 32px
+                }
+                
+            }
+        }
+        .add-form{
+            display: block;
+            width: 32%;
+            margin: 0 auto;
+            margin-top: 160px;
+            border: solid 2px;
+            border-radius: 10px;
+            padding: 80px 24px;
+            .add-title{
+                text-align: center;
+                font-size: 56px;
+                margin-top: 40px;
+            }
+            p{
+                text-align: center;
+                font-size: 40px;
+            }
+            .add-box{
+                display: block;
+                text-align: center;
+                .add-input{
+                    width: 320px;
+                    height:32px;
+                }
+            }
+            .add-submit{
+                display: block;
+                margin-top: 40px;
+                text-align: center;
+                margin-bottom: 40px;
+                input{
+                    width: 120px;
+                    height: 32px
+                }
+                
+            }
+        }
+        .guide{
+            .guide-title{
+                text-align: center;
+                font-size: 48px;
+            }
+            .guidelist-cont{
+                width: 75%;
+                .guidelist{
+                    display: block;
+                    font-size: 32px;
+                }
+            }
+
+        }
+    }
 }

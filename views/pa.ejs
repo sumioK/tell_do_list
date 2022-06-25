@@ -12,10 +12,10 @@
     <%- include('header.ejs') %>
  </header>
       <% if(locals.isLoggedIn === false){ %> 
-        <h1 class="need-login">機能を使用するにはログインまたは新規登録してください</h1>
+        <h1 class="need-login">ログインまたは新規登録してください</h1>
         <% } else {%>
         <dev class='list-title'>
-          <h1 class="title">ユーザー一覧</h1>
+          <h1 class="title">利用者一覧</h1>
           <a href="/addpa" class="add-url"><img src='/images/plus.png' class="add-btn"></a>     
         </dev>
    <dev>
