@@ -285,5 +285,9 @@ app.post('/deleteList/:id' , (req , res) => {
         }
     );     
     });
-
+//ユーザーガイド
+app.get('/guide' , (req , res) =>{
+    console.log('ユーザーガイドが開きました');
+    res.render('guide.ejs');
+})
 app.listen(3300);

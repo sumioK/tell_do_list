@@ -12,11 +12,12 @@
         <div class="header-nav">
             <p>ようこそ、<%= locals.userName %>さん</p>
             <% if(locals.isLoggedIn){ %>
-           <a href="/logout"><img src="/images/logout.png"></a>
+           <a href="/logout"><img src="/images/logout.png" title="Logout"></a>
            <% } else{ %>
-           <a href="/login"><img src=/images/login.png></a>
-           <a href="/signup"><img src=/images/add-user.png></a>
+           <a href="/login"><img src=/images/login.png title="Login"></a>
+           <a href="/signup"><img src=/images/add-user.png title="Signup"></a>
            <% }%> 
+           <a href="/guide"><img src=/images/guide.png title="Userguide"></a>
         </div>
 </body>
 </html>

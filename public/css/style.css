@@ -3,20 +3,10 @@
     width: 100%;
     margin: 0%;
     color: white;
-    background-image: url(/images/background1.jpg);
+    background-image: url(/images/background3.png);
     background-size: cover;
     background-repeat: no-repeat;
-  }
-  body:before {
-    content: '';
-    background-color: rgba(0, 0, 0, 0.5);
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    display: block;
-    z-index: -1;
+    background-position-y: 80px;
   }
   body header {
     background-color: white;
@@ -35,29 +25,28 @@
     margin-left: 16px;
     font-size: 56px;
     margin-bottom: 0px;
-    height: 8vh;
   }
   body header .header-nav {
     height: 80px;
     position: absolute;
-    right: 20px;
+    right: 0px;
     top: 0;
-    font-size: 2vh;
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
   }
   body header .header-nav p {
     margin-right: 48px;
-    margin-top: 24px;
+    font-size: 32px;
+    margin-top: 16px;
   }
   body header .header-nav a {
     text-decoration: none;
     margin-right: 32px;
   }
   body header .header-nav a img {
-    height: 4vh;
-    width: auto;
+    height: 40px;
+    width: 40px;
     margin-top: 16px;
   }
   body header .header-nav a img:hover {
@@ -65,21 +54,19 @@
   }
   body .top-center {
     text-align: center;
-    height: 10rem;
   }
   body .top-center .tell {
     font-size: 120px;
-    margin-top: 0;
+    margin-top: 8vh;
     margin-bottom: 40px;
   }
   body .top-center .do {
     font-size: 120px;
-    margin-top: 40px;
-    margin-bottom: 40px;
+    margin-top: 8vh;
   }
   body .top-center .list {
     font-size: 120px;
-    margin-top: 40px;
+    margin-top: 8vh;
     margin-bottom: 40px;
   }
   body .jumpList {
@@ -262,6 +249,17 @@
   body .add-form .add-submit input {
     width: 120px;
     height: 32px;
+  }
+  body .guide .guide-title {
+    text-align: center;
+    font-size: 48px;
+  }
+  body .guide .guidelist-cont {
+    width: 75%;
+  }
+  body .guide .guidelist-cont .guidelist {
+    display: block;
+    font-size: 32px;
   }
 }
 /*# sourceMappingURL=style.css.map */

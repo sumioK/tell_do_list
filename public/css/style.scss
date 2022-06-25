@@ -4,20 +4,10 @@
         margin: 0%;
         //background-color: rgb(3, 2, 39);
         color: white;
-        background-image: url(/images/background1.jpg);
+        background-image: url(/images/background3.png);
         background-size: cover;
         background-repeat: no-repeat;
-        &:before{
-            content: '';
-            background-color: rgba(0, 0, 0, 0.5);
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            display: block;
-            z-index: -1;
-        }
+        background-position-y: 80px;
         header{
             background-color: rgb(255, 255, 255);
             display: flex;
@@ -31,27 +21,26 @@
                     margin-left: 16px;
                     font-size: 56px;
                     margin-bottom: 0px;
-                    height: 8vh;
                 }
             }
     
             .header-nav{
                 height: 80px;
                 position: absolute;
-                right: 20px;
+                right: 0px;
                 top: 0 ;
-                font-size: 2vh;
                 display: flex;
                 p{
                     margin-right: 48px;
-                    margin-top: 24px;
+                    font-size: 32px;
+                    margin-top: 16px;
                 }
                 a{
                     text-decoration: none;
                     margin-right: 32px;
                     img{
-                        height: 4vh;
-                        width: auto;
+                        height: 40px;
+                        width: 40px;
                         margin-top: 16px;
                         &:hover{
                             opacity: 0.3;
@@ -63,20 +52,18 @@
         }
         .top-center{
             text-align: center;
-            height: 10rem;
             .tell{
                 font-size: 120px;
-                margin-top: 0;
+                margin-top: 8vh;
                 margin-bottom: 40px;
             }
             .do{
                 font-size: 120px;
-                margin-top: 40px;
-                margin-bottom: 40px;
+                margin-top: 8vh;
             }
             .list{
                 font-size: 120px;
-                margin-top: 40px;
+                margin-top: 8vh;
                 margin-bottom: 40px;
             }
         }
@@ -257,6 +244,20 @@
                 }
                 
             }
+        }
+        .guide{
+            .guide-title{
+                text-align: center;
+                font-size: 48px;
+            }
+            .guidelist-cont{
+                width: 75%;
+                .guidelist{
+                    display: block;
+                    font-size: 32px;
+                }
+            }
+
         }
     }
     
