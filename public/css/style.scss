@@ -251,20 +251,30 @@
         .guide{
             .guide-title{
                 text-align: center;
-                font-size: 48px;
+                font-size: 56px;
             }
             .guidelist-cont{
                 width: 75%;
                 .guidelist{
                     display: block;
-                    font-size: 32px;
+                    .guidelist-ti{
+                        font-size: 40px;
+                        padding-left: 5%;
+                    }
+                    .guidelist-sen{
+                        font-size: 32px;
+                        padding-left: 10%;
+                        margin-bottom: 40px;
+                    }
                 }
             }
 
         }
-    }
-    
+    }    
 }
+
+
+
 @media screen and (max-width:960px ){
     body{
         width: 100%;

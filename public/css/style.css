@@ -256,14 +256,22 @@
   }
   body .guide .guide-title {
     text-align: center;
-    font-size: 48px;
+    font-size: 56px;
   }
   body .guide .guidelist-cont {
     width: 75%;
   }
   body .guide .guidelist-cont .guidelist {
     display: block;
+  }
+  body .guide .guidelist-cont .guidelist .guidelist-ti {
+    font-size: 40px;
+    padding-left: 5%;
+  }
+  body .guide .guidelist-cont .guidelist .guidelist-sen {
     font-size: 32px;
+    padding-left: 10%;
+    margin-bottom: 40px;
   }
 }
 
