@@ -14,17 +14,11 @@
 
         <%- include('header.ejs') %>
     </header>
-<% /* 
-    <dev class="images">
-        <img src="/images/phone-call.png" class="fImg">
-        <img src="/images/clipboard.png" class="lImg">
+    <dev class="top-center">
+        <h1 class="tell">Tell</h1>
+        <h1 class="do">Do</h1>
+        <h1 class="list">List</h1>
     </dev>
-*/ %>
-<dev class="top-center">
-    <h1 class="tell">Tell</h1>
-    <h1 class="do">Do</h1>
-    <h1 class="list">List</h1>
-</dev>
     <dev class="jumpList">
 
         <a class="btn list-btn" href="/list">リスト一覧へ</a>
@@ -32,6 +26,5 @@
         <a class="btn user-btn" href="/pa">ユーザー一覧へ</a>
         <% if(locals.isLoggedIn){ %> <% } %>
     </dev> 
-
 </body>
 </html>

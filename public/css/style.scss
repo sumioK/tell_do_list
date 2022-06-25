@@ -1,222 +1,450 @@
-body{
-    width: 100%;
-    margin: 0%;
-    //background-color: rgb(3, 2, 39);
-    color: white;
-    background-image: url(/images/background1.jpg);
-    background-size: cover;
-    background-repeat: no-repeat;
-    &:before{
-        content: '';
-        background-color: rgba(0, 0, 0, 0.5);
-        position: absolute;
-        top: 0;
-        left: 0;
+@media screen and (min-width:661px) {
+    body{
         width: 100%;
-        height: 100%;
-        display: block;
-        z-index: -1;
-    }
-    header{
-        background-color: rgb(255, 255, 255);
-        display: flex;
-        height: 80px;
-        color: black;
-        a{
-            text-decoration: none;
-            color:black;
-            .top-title{
-                margin-top: 0px;
-                margin-left: 16px;
-                font-size: 56px;
-                margin-bottom: 0px;
-                height: 8vh;
-            }
-        }
-
-        .header-nav{
-            height: 80px;
+        margin: 0%;
+        //background-color: rgb(3, 2, 39);
+        color: white;
+        background-image: url(/images/background1.jpg);
+        background-size: cover;
+        background-repeat: no-repeat;
+        &:before{
+            content: '';
+            background-color: rgba(0, 0, 0, 0.5);
             position: absolute;
-            right: 20px;
-            top: 0 ;
-            font-size: 2vh;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            display: block;
+            z-index: -1;
+        }
+        header{
+            background-color: rgb(255, 255, 255);
             display: flex;
-            p{
-                margin-right: 48px;
-                margin-top: 24px;
-            }
+            height: 80px;
+            color: black;
             a{
                 text-decoration: none;
-                margin-right: 32px;
-                img{
-                    height: 4vh;
-                    width: auto;
-                    margin-top: 16px;
-                    &:hover{
-                        opacity: 0.3;
+                color:black;
+                .top-title{
+                    margin-top: 0px;
+                    margin-left: 16px;
+                    font-size: 56px;
+                    margin-bottom: 0px;
+                    height: 8vh;
+                }
+            }
+    
+            .header-nav{
+                height: 80px;
+                position: absolute;
+                right: 20px;
+                top: 0 ;
+                font-size: 2vh;
+                display: flex;
+                p{
+                    margin-right: 48px;
+                    margin-top: 24px;
+                }
+                a{
+                    text-decoration: none;
+                    margin-right: 32px;
+                    img{
+                        height: 4vh;
+                        width: auto;
+                        margin-top: 16px;
+                        &:hover{
+                            opacity: 0.3;
+                        }
                     }
                 }
             }
+    
         }
-
-    }
-    .top-center{
-        text-align: center;
-        .tell{
-            font-size: 120px;
-            margin-top: 40px;
-            margin-bottom: 40px;
-        }
-        .do{
-            font-size: 120px;
-            margin-top: 40px;
-            margin-bottom: 40px;
-        }
-        .list{
-            font-size: 120px;
-            margin-top: 40px;
-            margin-bottom: 40px;
-        }
-    }
-
-    .jumpList{
-        display: block;
-        margin-top: 80px;
-        text-align: center;
-
-        a{
-            text-decoration: none;
-            color: white;
-            font-size: 32px;
-            &:hover{
-                color: gray;
+        .top-center{
+            text-align: center;
+            .tell{
+                font-size: 120px;
+                margin-top: 40px;
+                margin-bottom: 40px;
+            }
+            .do{
+                font-size: 120px;
+                margin-top: 40px;
+                margin-bottom: 40px;
+            }
+            .list{
+                font-size: 120px;
+                margin-top: 40px;
+                margin-bottom: 40px;
             }
         }
-    }
-    .need-login{
-        margin-top: 160px;
-        text-align: center;
-        margin-bottom: 160px;
-        font-size: 48px;
-    }
-    .list-title{
-        display: flex;
-        justify-content: center;
-        h1{
+    
+        .jumpList{
+            display: block;
+            margin-top: 80px;
+            text-align: center;
+    
+            a{
+                text-decoration: none;
+                color: white;
+                font-size: 32px;
+                &:hover{
+                    color: gray;
+                }
+            }
+        }
+        .need-login{
+            margin-top: 160px;
+            text-align: center;
+            margin-bottom: 160px;
             font-size: 48px;
         }
-        .add-url{
-            height: 48px;
-            margin-top: 40px;
-            margin-left: 16px;
-            &:hover{
-                opacity: 0.8;
-            }
-            img{
-                height: 48px;
-
-            }
-        }
-    }
-    li{
-        list-style: none;
-        .lists{
-            padding-top: 10px;
-            padding-bottom: 10px;
-            border-bottom: 2px gray solid;
-            font-size: 24px;
-            list-style: none;
+        .list-title{
             display: flex;
-            flex-wrap: nowrap;
-            flex-direction: row;
-            width: 100%;
-            .paPhone{
-                margin-left: 16px;
+            justify-content: center;
+            h1{
+                font-size: 48px;
             }
-            .delete-btn{
-                height: 32px;
+            .add-url{
+                height: 48px;
+                margin-top: 40px;
                 margin-left: 16px;
                 &:hover{
                     opacity: 0.8;
                 }
+                img{
+                    height: 48px;
+    
+                }
             }
-            
+        }
+        li{
+            list-style: none;
+            .lists{
+                padding-top: 10px;
+                padding-bottom: 10px;
+                border-bottom: 2px gray solid;
+                font-size: 24px;
+                list-style: none;
+                display: flex;
+                flex-wrap: nowrap;
+                flex-direction: row;
+                width: 100%;
+                .paPhone{
+                    margin-left: 16px;
+                }
+                .delete-btn{
+                    height: 32px;
+                    margin-left: 16px;
+                    &:hover{
+                        opacity: 0.8;
+                    }
+                }
+                
+            }
+        }
+        .login-form{
+            display: block;
+            width: 32%;
+            margin: 0 auto;
+            margin-top: 160px;
+            border: solid 2px;
+            border-radius: 10px;
+            padding: 80px 24px;
+            .login-title{
+                text-align: center;
+                font-size: 56px;
+                margin-top: 40px;
+            }
+            p{
+                text-align: center;
+                font-size: 40px;
+            }
+            .login-box{
+                display: block;
+                text-align: center;
+                .login-input{
+                    width: 320px;
+                    height:32px;
+                }
+            }
+            .login-submit{
+                display: block;
+                margin-top: 40px;
+                text-align: center;
+                margin-bottom: 40px;
+                input{
+                    width: 120px;
+                    height: 32px
+                }
+                
+            }
+        }
+        .signup-form{
+            display: block;
+            width: 32%;
+            margin: 0 auto;
+            margin-top: 160px;
+            border: solid 2px;
+            border-radius: 10px;
+            padding: 80px 24px;
+            .signup-title{
+                text-align: center;
+                font-size: 56px;
+                margin-top: 40px;
+            }
+            p{
+                text-align: center;
+                font-size: 32px;
+                margin-top: 16px;
+                margin-bottom: 16px;
+            }
+            .signup-box{
+                display: block;
+                text-align: center;
+                .signup-input{
+                    width: 240px;
+                    height:24px;
+                }
+            }
+            .signup-submit{
+                display: block;
+                margin-top: 40px;
+                text-align: center;
+                margin-bottom: 40px;
+                input{
+                    width: 120px;
+                    height: 32px
+                }
+                
+            }
         }
     }
-    .login-form{
-        display: block;
-        width: 32%;
-        margin: 0 auto;
-        margin-top: 160px;
-        border: solid 2px;
-        border-radius: 10px;
-        padding: 80px 24px;
-        .login-title{
-            text-align: center;
-            font-size: 56px;
-            margin-top: 40px;
-        }
-        p{
-            text-align: center;
-            font-size: 40px;
-        }
-        .login-box{
+    
+}
+@media screen and (max-width:660px){
+    body{
+        width: 100%;
+        margin: 0%;
+        //background-color: rgb(3, 2, 39);
+        color: white;
+        background-image: url(/images/background1.jpg);
+        background-size: cover;
+        background-repeat: no-repeat;
+        &:before{
+            content: '';
+            background-color: rgba(0, 0, 0, 0.5);
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
             display: block;
+            z-index: -1;
+        }
+        header{
+            background-color: rgb(255, 255, 255);
+            display: flex;
+            height: 80px;
+            color: black;
+            a{
+                text-decoration: none;
+                color:black;
+                .top-title{
+                    margin-top: 0px;
+                    margin-left: 16px;
+                    font-size: 56px;
+                    margin-bottom: 0px;
+                    height: 8vh;
+                }
+            }
+    
+            .header-nav{
+                height: 80px;
+                position: absolute;
+                right: 20px;
+                top: 0 ;
+                font-size: 2vh;
+                display: flex;
+                p{
+                    margin-right: 48px;
+                    margin-top: 24px;
+                }
+                a{
+                    text-decoration: none;
+                    margin-right: 32px;
+                    img{
+                        height: 4vh;
+                        width: auto;
+                        margin-top: 16px;
+                        &:hover{
+                            opacity: 0.3;
+                        }
+                    }
+                }
+            }
+    
+        }
+        .top-center{
             text-align: center;
-            .login-input{
-                width: 320px;
-                height:32px;
+            .tell{
+                font-size: 120px;
+                margin-top: 40px;
+                margin-bottom: 40px;
+            }
+            .do{
+                font-size: 120px;
+                margin-top: 40px;
+                margin-bottom: 40px;
+            }
+            .list{
+                font-size: 120px;
+                margin-top: 40px;
+                margin-bottom: 40px;
             }
         }
-        .login-submit{
+    
+        .jumpList{
             display: block;
-            margin-top: 40px;
+            margin-top: 80px;
             text-align: center;
-            margin-bottom: 40px;
-            input{
-                width: 120px;
-                height: 32px
+    
+            a{
+                text-decoration: none;
+                color: white;
+                font-size: 32px;
+                &:hover{
+                    color: gray;
+                }
             }
-            
+        }
+        .need-login{
+            margin-top: 160px;
+            text-align: center;
+            margin-bottom: 160px;
+            font-size: 48px;
+        }
+        .list-title{
+            display: flex;
+            justify-content: center;
+            h1{
+                font-size: 48px;
+            }
+            .add-url{
+                height: 48px;
+                margin-top: 40px;
+                margin-left: 16px;
+                &:hover{
+                    opacity: 0.8;
+                }
+                img{
+                    height: 48px;
+    
+                }
+            }
+        }
+        li{
+            list-style: none;
+            .lists{
+                padding-top: 10px;
+                padding-bottom: 10px;
+                border-bottom: 2px gray solid;
+                font-size: 24px;
+                list-style: none;
+                display: flex;
+                flex-wrap: nowrap;
+                flex-direction: row;
+                width: 100%;
+                .paPhone{
+                    margin-left: 16px;
+                }
+                .delete-btn{
+                    height: 32px;
+                    margin-left: 16px;
+                    &:hover{
+                        opacity: 0.8;
+                    }
+                }
+                
+            }
+        }
+        .login-form{
+            display: block;
+            width: 32%;
+            margin: 0 auto;
+            margin-top: 160px;
+            border: solid 2px;
+            border-radius: 10px;
+            padding: 80px 24px;
+            .login-title{
+                text-align: center;
+                font-size: 56px;
+                margin-top: 40px;
+            }
+            p{
+                text-align: center;
+                font-size: 40px;
+            }
+            .login-box{
+                display: block;
+                text-align: center;
+                .login-input{
+                    width: 320px;
+                    height:32px;
+                }
+            }
+            .login-submit{
+                display: block;
+                margin-top: 40px;
+                text-align: center;
+                margin-bottom: 40px;
+                input{
+                    width: 120px;
+                    height: 32px
+                }
+                
+            }
+        }
+        .signup-form{
+            display: block;
+            width: 32%;
+            margin: 0 auto;
+            margin-top: 160px;
+            border: solid 2px;
+            border-radius: 10px;
+            padding: 80px 24px;
+            .signup-title{
+                text-align: center;
+                font-size: 56px;
+                margin-top: 40px;
+            }
+            p{
+                text-align: center;
+                font-size: 32px;
+                margin-top: 16px;
+                margin-bottom: 16px;
+            }
+            .signup-box{
+                display: block;
+                text-align: center;
+                .signup-input{
+                    width: 240px;
+                    height:24px;
+                }
+            }
+            .signup-submit{
+                display: block;
+                margin-top: 40px;
+                text-align: center;
+                margin-bottom: 40px;
+                input{
+                    width: 120px;
+                    height: 32px
+                }
+                
+            }
         }
     }
-    .signup-form{
-        display: block;
-        width: 32%;
-        margin: 0 auto;
-        margin-top: 160px;
-        border: solid 2px;
-        border-radius: 10px;
-        padding: 80px 24px;
-        .signup-title{
-            text-align: center;
-            font-size: 56px;
-            margin-top: 40px;
-        }
-        p{
-            text-align: center;
-            font-size: 32px;
-            margin-top: 16px;
-            margin-bottom: 16px;
-        }
-        .signup-box{
-            display: block;
-            text-align: center;
-            .signup-input{
-                width: 240px;
-                height:24px;
-            }
-        }
-        .signup-submit{
-            display: block;
-            margin-top: 40px;
-            text-align: center;
-            margin-bottom: 40px;
-            input{
-                width: 120px;
-                height: 32px
-            }
-            
-        }
-    }
+    
 }
