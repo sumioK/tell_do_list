@@ -65,10 +65,11 @@
   }
   body .top-center {
     text-align: center;
+    height: 10rem;
   }
   body .top-center .tell {
     font-size: 120px;
-    margin-top: 40px;
+    margin-top: 0;
     margin-bottom: 40px;
   }
   body .top-center .do {
@@ -226,163 +227,7 @@
     width: 120px;
     height: 32px;
   }
-}
-
-@media screen and (max-width: 660px) {
-  body {
-    width: 100%;
-    margin: 0%;
-    color: white;
-    background-image: url(/images/background1.jpg);
-    background-size: cover;
-    background-repeat: no-repeat;
-  }
-  body:before {
-    content: '';
-    background-color: rgba(0, 0, 0, 0.5);
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    display: block;
-    z-index: -1;
-  }
-  body header {
-    background-color: white;
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    height: 80px;
-    color: black;
-  }
-  body header a {
-    text-decoration: none;
-    color: black;
-  }
-  body header a .top-title {
-    margin-top: 0px;
-    margin-left: 16px;
-    font-size: 56px;
-    margin-bottom: 0px;
-    height: 8vh;
-  }
-  body header .header-nav {
-    height: 80px;
-    position: absolute;
-    right: 20px;
-    top: 0;
-    font-size: 2vh;
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-  }
-  body header .header-nav p {
-    margin-right: 48px;
-    margin-top: 24px;
-  }
-  body header .header-nav a {
-    text-decoration: none;
-    margin-right: 32px;
-  }
-  body header .header-nav a img {
-    height: 4vh;
-    width: auto;
-    margin-top: 16px;
-  }
-  body header .header-nav a img:hover {
-    opacity: 0.3;
-  }
-  body .top-center {
-    text-align: center;
-  }
-  body .top-center .tell {
-    font-size: 120px;
-    margin-top: 40px;
-    margin-bottom: 40px;
-  }
-  body .top-center .do {
-    font-size: 120px;
-    margin-top: 40px;
-    margin-bottom: 40px;
-  }
-  body .top-center .list {
-    font-size: 120px;
-    margin-top: 40px;
-    margin-bottom: 40px;
-  }
-  body .jumpList {
-    display: block;
-    margin-top: 80px;
-    text-align: center;
-  }
-  body .jumpList a {
-    text-decoration: none;
-    color: white;
-    font-size: 32px;
-  }
-  body .jumpList a:hover {
-    color: gray;
-  }
-  body .need-login {
-    margin-top: 160px;
-    text-align: center;
-    margin-bottom: 160px;
-    font-size: 48px;
-  }
-  body .list-title {
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-pack: center;
-        -ms-flex-pack: center;
-            justify-content: center;
-  }
-  body .list-title h1 {
-    font-size: 48px;
-  }
-  body .list-title .add-url {
-    height: 48px;
-    margin-top: 40px;
-    margin-left: 16px;
-  }
-  body .list-title .add-url:hover {
-    opacity: 0.8;
-  }
-  body .list-title .add-url img {
-    height: 48px;
-  }
-  body li {
-    list-style: none;
-  }
-  body li .lists {
-    padding-top: 10px;
-    padding-bottom: 10px;
-    border-bottom: 2px gray solid;
-    font-size: 24px;
-    list-style: none;
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -ms-flex-wrap: nowrap;
-        flex-wrap: nowrap;
-    -webkit-box-orient: horizontal;
-    -webkit-box-direction: normal;
-        -ms-flex-direction: row;
-            flex-direction: row;
-    width: 100%;
-  }
-  body li .lists .paPhone {
-    margin-left: 16px;
-  }
-  body li .lists .delete-btn {
-    height: 32px;
-    margin-left: 16px;
-  }
-  body li .lists .delete-btn:hover {
-    opacity: 0.8;
-  }
-  body .login-form {
+  body .add-form {
     display: block;
     width: 32%;
     margin: 0 auto;
@@ -391,68 +236,30 @@
     border-radius: 10px;
     padding: 80px 24px;
   }
-  body .login-form .login-title {
+  body .add-form .add-title {
     text-align: center;
     font-size: 56px;
     margin-top: 40px;
   }
-  body .login-form p {
+  body .add-form p {
     text-align: center;
     font-size: 40px;
   }
-  body .login-form .login-box {
+  body .add-form .add-box {
     display: block;
     text-align: center;
   }
-  body .login-form .login-box .login-input {
+  body .add-form .add-box .add-input {
     width: 320px;
     height: 32px;
   }
-  body .login-form .login-submit {
+  body .add-form .add-submit {
     display: block;
     margin-top: 40px;
     text-align: center;
     margin-bottom: 40px;
   }
-  body .login-form .login-submit input {
-    width: 120px;
-    height: 32px;
-  }
-  body .signup-form {
-    display: block;
-    width: 32%;
-    margin: 0 auto;
-    margin-top: 160px;
-    border: solid 2px;
-    border-radius: 10px;
-    padding: 80px 24px;
-  }
-  body .signup-form .signup-title {
-    text-align: center;
-    font-size: 56px;
-    margin-top: 40px;
-  }
-  body .signup-form p {
-    text-align: center;
-    font-size: 32px;
-    margin-top: 16px;
-    margin-bottom: 16px;
-  }
-  body .signup-form .signup-box {
-    display: block;
-    text-align: center;
-  }
-  body .signup-form .signup-box .signup-input {
-    width: 240px;
-    height: 24px;
-  }
-  body .signup-form .signup-submit {
-    display: block;
-    margin-top: 40px;
-    text-align: center;
-    margin-bottom: 40px;
-  }
-  body .signup-form .signup-submit input {
+  body .add-form .add-submit input {
     width: 120px;
     height: 32px;
   }

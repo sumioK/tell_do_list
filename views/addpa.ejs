@@ -12,24 +12,32 @@
         <%- include('header.ejs') %>
     </header>
 
-    <dev class="title-container">
-        <h1 class="title">電話番号の追加</h1>
-    </dev>
     <% if(locals.isLoggedIn === false){ %> 
-        <h1>機能を使用するにはログインしてください</h1>
-        <a href="/" class="btn">トップ画面へ戻る</a>
+        <h1 class="need-login">機能を使用するにはログインしてください</h1>
+        <dev class="jumpList">
+            <a href="/">トップへ戻る</a>
+        </dev>
         <% } else {%>
-    <form action="/createPa" method="post">
-        <p class='userName-sentence'>利用者氏名</p>
-        <input type="text" class='addPaName' name='addPaName'>
-        <p class="user-phoneNo">電話番号</p>
-        <input type="text" class="addPhoneNum" name='addPhoneNum'>
-        <input type="submit" value="登録" class="addInfoSubmit">
-    </form>
-    <dev class="btn-container">
-        <a href="/pa" class="btn">登録者一覧へ戻る</a>
-    </dev>
-         <% } %>
+            <dev class="form-box">
+                <form action="/createPa" method="post" class="add-form">
+                    <h1 class="add-title">利用者の追加</h1>
+                    <p class='userName-sentence'>利用者氏名</p>
+                    <dev class="add-box">
+                        <input type="text" class='add-input' name='addPaName'>
+                    </dev>
+                    <p class="user-phoneNo">電話番号</p>
+                    <dev class="add-box">
+                        <input type="text" class="add-input" name='addPhoneNum'>
+                    </dev>
+                    <dev class="add-submit">
+                        <input type="submit" value="登録" class="addInfoSubmit">
+                    </dev>
+                </form>
+                <dev class="jumpList">
+                    <a href="/pa" class="btn">登録者一覧へ戻る</a>
+                </dev>
+                </dev> 
+                <% } %>
  
 </body>
 </html>

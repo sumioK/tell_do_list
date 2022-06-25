@@ -8,27 +8,35 @@
     <title>Add List</title>
 </head>
 <body>
-    <dev class="title-container">
-        <h1 class="title">新しい項目の追加</h1>
-    </dev>
+    <header>
+        <%- include('header.ejs') %>
+   </header>
+
     <% if(locals.isLoggedIn === false){ %> 
-        <h1>機能を使用するにはログインしてください</h1>
-        <a href="/" class="btn">トップ画面へ戻る</a>
+        <h1 class="need-login">機能を使用するにはログインしてください</h1>
+        <dev class="jumpList">
+            <a href="/">トップへ戻る</a>
+        </dev>
         <% } else {%>
-    <form action="/create" method="post" class="form">
-        <dev clas='add1'>
-            <p class="addSentence1">利用者氏名</p>
-            <input type="text" class="addListPaName" name="addListPaName">
-        </dev>
-        <dev clas="add2">
-            <p class="addSentence2">Todo</p>
-            <input type="text" class="addListAction" name ='addListAction'>
-        </dev>
-        <input type="submit" value="登録" class="addListSubmit">
-    </form>
-    <dev class='btn-container'>
-        <a href="/list" class="btn">リストへ戻る</a>
-    </dev>
-    <% } %>
+            <dev class='form-box'>
+                <form action="/create" method="post" class="add-form">
+                    <h1 class="add-title">新しい項目の追加</h1>
+                    <p class="addSentence1">利用者氏名</p>
+                    <dev class="add-box">
+                        <input type="text" class="add-input" name="addListPaName">
+                    </dev>
+                    <p class="addSentence2">Todo</p>
+                    <dev class="add-box">
+                        <input type="text" class="add-input" name ='addListAction'>
+                    </dev>
+                    <dev class="add-submit">
+                        <input type="submit" value="登録" class="addListSubmit">
+                    </dev>
+                </form>
+                <dev class='jumpList'>
+                    <a href="/list" class="btn">リストへ戻る</a>
+                </dev>
+            </dev>
+     <% } %>
 </body>
 </html>
